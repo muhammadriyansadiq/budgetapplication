@@ -111,6 +111,11 @@ document.querySelector(".expenselistt").addEventListener("click",function(e){
         console.log("edited");
         let productname = prompt("enter productname")
         let produccost = prompt("enter produccost")
+        if(productname){
+
+        if(produccost){
+
+       
         const object = {productsname:productname, productscost: produccost };
         const li = e.target.parentElement;
         const index = Array.from(e.target.parentElement.parentElement.children).indexOf(li);
@@ -119,6 +124,14 @@ document.querySelector(".expenselistt").addEventListener("click",function(e){
         storage.splice(index, 1,object);
         localStorage.setItem('expense', JSON.stringify(storage));
         location.reload();
+    }
+    else{
+        alert("enter product cost")
+    }
+    }
+    else{
+        alert("enter product name")
+    }
     }
 
 })
